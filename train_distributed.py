@@ -30,12 +30,9 @@ warnings.filterwarnings('ignore')
 setup_seed(args.seed)
 
 def main(args):
-    if args['dataset'] == 'jhu':
-        train_file = './npydata/jhu_train.npy'
-        test_file = './npydata/jhu_val.npy'
-    elif args['dataset'] == 'nwpu':
-        train_file = './npydata/nwpu_train.npy'
-        test_file = './npydata/nwpu_val.npy'
+    if args['dataset'] == 'high':
+        train_file = './npydata/high_train.npy'
+        test_file = './npydata/high_test.npy'
 
     with open(train_file, 'rb') as outfile:
         train_data = np.load(outfile).tolist()

@@ -2,10 +2,10 @@ import argparse
 
 parser = argparse.ArgumentParser(description='CLTR')
 
-parser.add_argument('--dataset', type=str, default='jhu',
+parser.add_argument('--dataset', type=str, default='high',
                     help='choice train dataset')
 
-parser.add_argument('--save_path', type=str, default='save_file/A_ddp',
+parser.add_argument('--save_path', type=str, default='save_file/',
                     help='save checkpoint directory')
 parser.add_argument('--workers', type=int, default=2,
                     help='load data workers')
@@ -13,7 +13,7 @@ parser.add_argument('--print_freq', type=int, default=200,
                     help='print frequency')
 parser.add_argument('--start_epoch', type=int, default=0,
                     help='start epoch for training')
-parser.add_argument('--epochs', type=int, default=5000,
+parser.add_argument('--epochs', type=int, default=800,
                     help='end epoch for training')
 parser.add_argument('--pre', type=str, default=None,
                     help='pre-trained model directory')
@@ -28,7 +28,7 @@ parser.add_argument('--seed', type=int, default=1,
                     help='random seed')
 parser.add_argument('--best_pred', type=int, default=1e5,
                     help='best pred')
-parser.add_argument('--gpu_id', type=str, default='0,1',
+parser.add_argument('--gpu_id', type=str, default='0',
                     help='gpu id')
 parser.add_argument('--lr', type=float, default=1e-4,
                     help='learning rate')
@@ -39,7 +39,7 @@ parser.add_argument('--save',  action='store_true',
                     help='save the file')
 parser.add_argument('--scale_aug', action='store_true',
                     help='using the scale augmentation')
-parser.add_argument('--scale_type', type=int, default=0,
+parser.add_argument('--scale_type', type=int, default=1,
                     help='scale type')
 parser.add_argument('--scale_p', type=float, default=0.3,
                     help='probability of scaling')
@@ -134,7 +134,7 @@ parser.add_argument('--coco_path', type=str)
 parser.add_argument('--coco_panoptic_path', type=str)
 parser.add_argument('--remove_difficult', action='store_true')
 
-parser.add_argument('--output_dir', default='',
+parser.add_argument('--output_dir', default='./output',
                     help='path where to save, empty for no saving')
 parser.add_argument('--device', default='cuda',
                     help='device to use for training / testing')
